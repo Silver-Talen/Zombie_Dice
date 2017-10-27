@@ -6,7 +6,7 @@ public class Play_Game {
 
     private static void Game(){
         Scanner Scanner = new Scanner(System.in);
-        Player Player = new Player();
+        Player_Sheet Player = new Player_Sheet();
         Dice Dice = new Dice();
         Cup Cup = new Cup();
 
