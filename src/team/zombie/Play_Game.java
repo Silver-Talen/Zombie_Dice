@@ -33,6 +33,9 @@ class Play_Game {
                 //Runs til they say they want to stop or they get shot 3 times
 
             }
+
+            //til player wins continue
+
         }
 
     }
