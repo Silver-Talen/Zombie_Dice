@@ -8,7 +8,6 @@ class Play_Game {
         Scanner Scanner = new Scanner(System.in);
         Player_Sheet Player = new Player_Sheet();
         Dice Dice = new Dice();
-        Cup Cup = new Cup();
 
         String p1 = "";
         String p2 = "";
@@ -24,19 +23,27 @@ class Play_Game {
         while (gameRunning) {
             //make it display the stats for each player
 
+            System.out.println(Player);
+            do {
 
-            while (alive) {
 
-                //each individual turn for the player
-                //call dice/cup for the dice rolls
-                //then set/change stats for player
-                //Runs til they say they want to stop or they get shot 3 times
+
+                while (alive) {
+
+                    Dice.dice();
+
+                    //each individual turn for the player
+                    //call dice/cup for the dice rolls
+                    //then set/change stats for player
+                    //Runs til they say they want to stop or they get shot 3 times
+
+                }
+
+                //til player wins continue
 
             }
-
-            //til player wins continue
-
         }
+
 
     }
 
