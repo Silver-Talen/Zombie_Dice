@@ -26,24 +26,26 @@ class Play_Game {
             }
 
 
-            Player_Sheet Player = new Player_Sheet();
+            Player_Sheet Player1 = new Player_Sheet();
+
             Dice Dice = new Dice();
 
             String p1 = "";
             String p2 = "";
             System.out.println("What is the name of player 1:");
             p1 = scanner.nextLine();
+            Player1.setName(p1, 1);
             System.out.println("What is the name of player 2:");
             p2 = scanner.nextLine();
             //send this data to the player class to store
             //call default player data
 
-            boolean gameRunning = true;
-            boolean alive = true;
+            boolean gameRunning;
+            boolean alive;
             while (gameRunning) {
                 //make it display the stats for each player
 
-                System.out.println(Player);
+                System.out.println(Player1);
                 do {
 
 
