@@ -2,7 +2,7 @@ package team.zombie;
 
 import java.util.Random;
 
-public class Dice {
+class Dice {
 
         String color = "";
         int diceroll = 0;
