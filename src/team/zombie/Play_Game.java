@@ -11,19 +11,7 @@ class Play_Game {
         boolean keepPlaying = true;
         boolean select = true;
         do {
-            while (select) {
-                System.out.println("Would you like to play again Yes/No?");
-                input = scanner.nextLine();
-
-                if (input.equalsIgnoreCase("yes")) {
-                    select = false;
-                } else if (input.equalsIgnoreCase("no")) {
-                    select = false;
-                    keepPlaying = false;
-                } else {
-                    System.out.println("Invalid input, please try again.");
-                }
-            }
+            System.out.println("Welcome to Zombie Dice!!");
 
 
             Player_Sheet Player1 = new Player_Sheet();
@@ -78,7 +66,7 @@ class Play_Game {
 
 
                     }while (alive);
-
+                        alive = true;
                 do {
                     System.out.println(Player2.getName());
                     System.out.println(Player2.getBrainsEaten());
@@ -119,10 +107,20 @@ class Play_Game {
 
 
 
+                while (select) {
+                    System.out.println("Would you like to play again Yes/No?");
+                    input = scanner.nextLine();
 
-
-
+                    if (input.equalsIgnoreCase("yes")) {
+                        select = false;
+                    } else if (input.equalsIgnoreCase("no")) {
+                        select = false;
+                        keepPlaying = false;
+                    } else {
+                        System.out.println("Invalid input, please try again.");
+                    }
                 }
+            }
         }while (keepPlaying);
     }
 
