@@ -10,7 +10,7 @@ class Dice {
         boolean fpKeep = false;
         private Random difficulty = new Random();
         int testerino = difficulty.nextInt(100)+1;
-        public void dice(){
+        void dice(){
 
 
             int initialChance = testerino;
