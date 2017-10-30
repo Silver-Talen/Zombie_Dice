@@ -32,6 +32,10 @@ class Play_Game {
 
             boolean gameRunning =true;
             boolean alive =true;
+            Cup die1 = new Cup();
+            Cup die2 = new Cup();
+            Cup die3 = new Cup();
+
             while (gameRunning) {
                 //make it display the stats for each player
 

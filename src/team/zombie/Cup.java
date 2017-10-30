@@ -2,9 +2,7 @@ package team.zombie;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-class Cup {
-    private Cup() {
-    }
+class Cup{
 
     private String DiceType() {
         int percent1 = ThreadLocalRandom.current().nextInt(1, 101);
