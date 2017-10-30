@@ -5,16 +5,19 @@ import java.util.Scanner;
 class Play_Game {
 
     static void Game() {
-        Scanner Scanner = new Scanner(System.in);
+
+
+
+        Scanner scanner = new Scanner(System.in);
         Player_Sheet Player = new Player_Sheet();
         Dice Dice = new Dice();
 
         String p1 = "";
         String p2 = "";
         System.out.println("What is the name of player 1:");
-        p1 = Scanner.nextLine();
+        p1 = scanner.nextLine();
         System.out.println("What is the name of player 2:");
-        p2 = Scanner.nextLine();
+        p2 = scanner.nextLine();
         //send this data to the player class to store
         //call default player data
 

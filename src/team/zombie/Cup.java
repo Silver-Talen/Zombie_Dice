@@ -20,8 +20,8 @@ class Cup {
 
         return Dice;
     }
-    public class CupReturn {
-        public CupReturn() {
+    private class CupReturn {
+        private CupReturn() {
         }
 
         public void main(String[] args) {
