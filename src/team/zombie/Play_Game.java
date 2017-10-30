@@ -45,7 +45,7 @@ class Play_Game {
                     System.out.println(Dice.getResult());
                     System.out.println(Dice.getResult());
                     System.out.println(Dice.getResult());
-                    //set dice.Results = player stats
+
 
                     for (int i = 1; i < 3; i++) {
                         if (Dice.result.equals(Brains)) {
@@ -63,8 +63,15 @@ class Play_Game {
                     }
 
                     System.out.println("Would you like to continue? Y/N");
+                    String cont = scanner.nextLine();
 
-
+                    if (cont.equalsIgnoreCase("N")) {
+                        alive = false;
+                    } else if (cont.equalsIgnoreCase("Y")) {
+                        alive = true;
+                    } else {
+                        System.out.println("Invalid input, please try again");
+                    }
                     }while (alive);
                         alive = true;
                 do {
