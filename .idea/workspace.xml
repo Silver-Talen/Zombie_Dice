@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6eb6705c-ead1-41e3-95ed-60e2637c16fc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/team/zombie/Cup.java" afterPath="$PROJECT_DIR$/src/team/zombie/Cup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/team/zombie/Main.java" afterPath="$PROJECT_DIR$/src/team/zombie/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/team/zombie/Play_Game.java" afterPath="$PROJECT_DIR$/src/team/zombie/Play_Game.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,8 +39,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/team/zombie/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="320">
+              <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -49,8 +49,8 @@
       <file leaf-file-name="Play_Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/team/zombie/Play_Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+            <state relative-caret-position="2600">
+              <caret line="65" column="29" lean-forward="false" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -88,11 +88,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/team/zombie/Main.java" />
         <option value="$PROJECT_DIR$/Zombie Dice (Cup)/out/production/Zombie Dice (Cup)/ZombieDice/Cup.class" />
         <option value="$PROJECT_DIR$/src/team/zombie/Cup.java" />
         <option value="$PROJECT_DIR$/src/team/zombie/Dice.java" />
         <option value="$PROJECT_DIR$/src/team/zombie/Play_Game.java" />
+        <option value="$PROJECT_DIR$/src/team/zombie/Main.java" />
       </list>
     </option>
   </component>
@@ -406,11 +406,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509379485785</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="game">
+      <created>1509382822994</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1509382822994</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5704000" />
+    <option name="totallyTimeSpent" value="5995000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3872" height="2116" extended-state="6" />
@@ -718,6 +725,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/team/zombie/Player_Sheet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/team/zombie/Dice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -728,24 +743,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/team/zombie/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/team/zombie/Player_Sheet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="320">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/team/zombie/Play_Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        <state relative-caret-position="2600">
+          <caret line="65" column="29" lean-forward="false" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
           <folding />
         </state>
       </provider>
