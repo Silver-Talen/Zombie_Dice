@@ -1,31 +1,23 @@
 package team.zombie;
 
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
-class Cup{
+public class Cup {
 
-    private String DiceType() {
-        int percent1 = ThreadLocalRandom.current().nextInt(1, 101);
-        new String();
-        String Dice;
+    public String DiceType() {
+        Random random = new Random();
+        int percent1 = random.nextInt(101);
+        String dice;
         if (percent1 < 46) {
-            Dice = "Green";
+            dice = "Green";
+            System.out.println(Dice.greenDie());
         } else if (percent1 > 77) {
-            Dice = "Red";
+            dice = "Red";
+            System.out.println(Dice.redDie());
         } else {
-            Dice = "Yellow";
+            dice = "Yellow";
+            System.out.println(Dice.yellowDie());
         }
-
-        return Dice;
-    }
-    private class CupReturn {
-        private CupReturn() {
-        }
-
-        public void main(String[] args) {
-            Cup DiceOutput = new Cup();
-            DiceOutput.DiceType();
-            System.out.println(DiceOutput.DiceType());
-        }
+        return dice;
     }
 }
