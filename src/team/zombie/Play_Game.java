@@ -13,14 +13,16 @@ class Play_Game {
         do {
             System.out.println("Welcome to Zombie Dice!!");
 
-
+//Declaration of items for the entire game
             Player_Sheet Player1 = new Player_Sheet();
             Player_Sheet Player2 = new Player_Sheet();
             Dice Dice = new Dice();
             String Brains = "Brains";
             String Blast = "Blast";
             String Footprints = "Footprints";
+            Player_Sheet[] playerSheets = new Player_Sheet[2];
 
+//Getting player information
             String p1 = "";
             String p2 = "";
             System.out.println("What is the name of player 1:");
@@ -29,105 +31,68 @@ class Play_Game {
             System.out.println("What is the name of player 2:");
             p2 = scanner.nextLine();
             Player2.setName(p2, 2);
+            playerSheets[0] = Player1;
+            playerSheets[1] = Player2;
 
+//Setting values for Do While loop
             boolean gameRunning = true;
             boolean alive =true;
-
+            boolean fpKeep = false;
             Cup cup = new Cup();
-
+            Dice die;
 
             while (gameRunning) {
                 //make it display the stats for each player
 
-
+                for (Player_Sheet p : playerSheets) {
                 do {
-                    System.out.println(Player1.getName());
-                    System.out.println(Player1.getBrainsEaten());
-                    System.out.println(Player1.getShots());
-                    System.out.println(Player1.getSurvivorsCornered());
 
-                    System.out.println(cup.DiceType());
-                    System.out.println(cup.DiceType());
-                    System.out.println(cup.DiceType());
+                        System.out.println("");
+                        System.out.println(p.getName());
+                        System.out.println("Brains eaten: " + p.getBrainsEaten());
+                        System.out.println("Times shot: " + p.getShots());
+                        System.out.println("Survivors cornered: " + p.getSurvivorsCornered());
+                        System.out.println("");
 
-                    for (int i = 1; i < 3; i++) {
-                        if (Dice.result.equals(Brains)) {
-                            Player1.setBrainsEaten(+1);
+                        for (int i = 0; i < 3; i++) {
+                            //do if statements for if the roll was footprints or not
+
+                            die = Cup.DiceType();
+                            System.out.println(die.getColor() + ": " + die.getType());
+
+                            if (die.getType().equalsIgnoreCase("brains")) {
+                                p.setSurvivorsCornered(p.getSurvivorsCornered() + 1);
+                            } else if (die.getType().equalsIgnoreCase("blast")) {
+                                p.setShots(p.getShots() + 1);
+                            } else if (die.getType().equalsIgnoreCase("footprints")) {
+                                fpKeep = true;
+                                //make an array length of 3 and save the color of the die and roll again
+                            }
                         }
-                        else if (Dice.result.equals(Blast)) {
-                            Player1.setShots(+1);
+                        if (p.getShots() > 2) {
+                            alive = false;
+                            p.setBrainsEaten(0);
+                            p.setSurvivorsCornered(0);
                         }
-                        else if (Dice.result.equals(Footprints)) {
-                            Dice.fpKeep = true;
+                        if (p.getBrainsEaten() >= 13) {
+                            System.out.println("You win!");
+                            alive = false;
                         }
-                    }
-                    if (Player1.getShots() >= 3) {
-                        alive = false;
-                        Player1.setBrainsEaten(0);
-                        Player1.setSurvivorsCornered(0);
-                    }
-                    if (Player1.getBrainsEaten() >=13) {
-                        System.out.println("You win!");
-                        alive = false;
-                    }
-                    System.out.println("Would you like to continue? Y/N");
-                    String cont = scanner.nextLine();
+                        if (alive = true) {
+                            System.out.println("Would you like to continue? Y/N");
+                            String cont = scanner.nextLine();
 
-                    if (cont.equalsIgnoreCase("N")) {
-                        alive = false;
-                    } else if (cont.equalsIgnoreCase("Y")) {
-                        alive = true;
-                    } else {
-                        System.out.println("Invalid input, please try again");
-                    }
-                }while (alive);
-                alive = true;
-                do {
-                    System.out.println(Player2.getName());
-                    System.out.println(Player2.getBrainsEaten());
-                    System.out.println(Player2.getShots());
-                    System.out.println(Player2.getSurvivorsCornered());
-
-//                    System.out.println(Dice.getResult());
-//                    System.out.println(Dice.getResult());
-//                    System.out.println(Dice.getResult());
-//                    //Keep footprint dice
-//
-//                    for (int i = 1; i < 3; i++) {
-//                        if (Dice.result.equals(Brains)) {
-//                            Player2.setBrainsEaten(+1);
-//                        }
-//                        else if (Dice.result.equals(Blast)) {
-//                            Player2.setShots(+1);
-//                        }
-//                        else if (Dice.result.equals(Footprints)) {
-//                            Dice.fpKeep = true;
-//                        }
-//                    }
-                    if (Player2.getShots() >= 3) {
-                        alive = false;
-                        Player1.setBrainsEaten(0);
-                        Player1.setSurvivorsCornered(0);
-                    }
-                    if (Player2.getBrainsEaten() >=13) {
-                        System.out.println("You win!");
-                        alive = false;
-                    }
-
-                    System.out.println("Would you like to continue? Y/N");
-                    String cont = scanner.nextLine();
-
-                    if (cont.equalsIgnoreCase("N")) {
-                        alive = false;
-                    } else if (cont.equalsIgnoreCase("Y")) {
-                        alive = true;
-                    } else {
-                        System.out.println("Invalid input, please try again");
-                    }
-
-
-                }while (alive);
-
+                            if (cont.equalsIgnoreCase("N")) {
+                                alive = false;
+                                p.setBrainsEaten(p.getSurvivorsCornered());
+                            } else if (cont.equalsIgnoreCase("Y")) {
+                                alive = true;
+                            } else {
+                                System.out.println("Invalid input, please try again");
+                            }
+                        }
+                }
+                    while (alive) ;}
 
 
 

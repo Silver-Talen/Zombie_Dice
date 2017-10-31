@@ -4,20 +4,27 @@ import java.util.Random;
 
 public class Cup {
 
-    public String DiceType() {
+    public static Dice DiceType() {
         Random random = new Random();
+        Dice die = new Dice();
         int percent1 = random.nextInt(101);
         String dice;
         if (percent1 < 46) {
             dice = "Green";
-            System.out.println(Dice.greenDie());
+            die.setColor(dice);
+            die.setType(die.greenDie());
+          //  System.out.println(die.greenDie());
         } else if (percent1 > 77) {
             dice = "Red";
-            System.out.println(Dice.redDie());
+            die.setColor(dice);
+            die.setType(die.redDie());
+            //System.out.println(die.redDie());
         } else {
             dice = "Yellow";
-            System.out.println(Dice.yellowDie());
+            die.setColor(dice);
+            die.setType(die.yellowDie());
+           // System.out.println(die.yellowDie());
         }
-        return dice;
+        return die;
     }
 }
