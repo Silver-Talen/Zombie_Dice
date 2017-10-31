@@ -30,11 +30,11 @@ class Play_Game {
             p2 = scanner.nextLine();
             Player2.setName(p2, 2);
 
-            boolean gameRunning =true;
+            boolean gameRunning = true;
             boolean alive =true;
-            Cup die1 = new Cup();
-            Cup die2 = new Cup();
-            Cup die3 = new Cup();
+
+            Cup cup = new Cup();
+
 
             while (gameRunning) {
                 //make it display the stats for each player
@@ -46,10 +46,9 @@ class Play_Game {
                     System.out.println(Player1.getShots());
                     System.out.println(Player1.getSurvivorsCornered());
 
-                    System.out.println(Dice.getResult());
-                    System.out.println(Dice.getResult());
-                    System.out.println(Dice.getResult());
-
+                    System.out.println(cup.DiceType());
+                    System.out.println(cup.DiceType());
+                    System.out.println(cup.DiceType());
 
                     for (int i = 1; i < 3; i++) {
                         if (Dice.result.equals(Brains)) {
@@ -76,30 +75,30 @@ class Play_Game {
                     } else {
                         System.out.println("Invalid input, please try again");
                     }
-                    }while (alive);
-                        alive = true;
+                }while (alive);
+                alive = true;
                 do {
                     System.out.println(Player2.getName());
                     System.out.println(Player2.getBrainsEaten());
                     System.out.println(Player2.getShots());
                     System.out.println(Player2.getSurvivorsCornered());
 
-                    System.out.println(Dice.getResult());
-                    System.out.println(Dice.getResult());
-                    System.out.println(Dice.getResult());
-                    //Keep footprint dice
-
-                    for (int i = 1; i < 3; i++) {
-                        if (Dice.result.equals(Brains)) {
-                            Player2.setBrainsEaten(+1);
-                        }
-                        else if (Dice.result.equals(Blast)) {
-                            Player2.setShots(+1);
-                        }
-                        else if (Dice.result.equals(Footprints)) {
-                            Dice.fpKeep = true;
-                        }
-                    }
+//                    System.out.println(Dice.getResult());
+//                    System.out.println(Dice.getResult());
+//                    System.out.println(Dice.getResult());
+//                    //Keep footprint dice
+//
+//                    for (int i = 1; i < 3; i++) {
+//                        if (Dice.result.equals(Brains)) {
+//                            Player2.setBrainsEaten(+1);
+//                        }
+//                        else if (Dice.result.equals(Blast)) {
+//                            Player2.setShots(+1);
+//                        }
+//                        else if (Dice.result.equals(Footprints)) {
+//                            Dice.fpKeep = true;
+//                        }
+//                    }
                     if (Player2.getShots() >= 3) {
                         alive = false;
                     }
