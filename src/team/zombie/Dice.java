@@ -78,5 +78,3 @@ class Dice {
         public String getColor() {return color; }
 
     }
-
-

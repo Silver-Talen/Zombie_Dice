@@ -64,8 +64,13 @@ class Play_Game {
                     }
                     if (Player1.getShots() >= 3) {
                         alive = false;
+                        Player1.setBrainsEaten(0);
+                        Player1.setSurvivorsCornered(0);
                     }
-
+                    if (Player1.getBrainsEaten() >=13) {
+                        System.out.println("You win!");
+                        alive = false;
+                    }
                     System.out.println("Would you like to continue? Y/N");
                     String cont = scanner.nextLine();
 
@@ -102,9 +107,24 @@ class Play_Game {
                     }
                     if (Player2.getShots() >= 3) {
                         alive = false;
+                        Player1.setBrainsEaten(0);
+                        Player1.setSurvivorsCornered(0);
+                    }
+                    if (Player2.getBrainsEaten() >=13) {
+                        System.out.println("You win!");
+                        alive = false;
                     }
 
                     System.out.println("Would you like to continue? Y/N");
+                    String cont = scanner.nextLine();
+
+                    if (cont.equalsIgnoreCase("N")) {
+                        alive = false;
+                    } else if (cont.equalsIgnoreCase("Y")) {
+                        alive = true;
+                    } else {
+                        System.out.println("Invalid input, please try again");
+                    }
 
 
                 }while (alive);
