@@ -36,7 +36,7 @@ class Play_Game {
 
 //Setting values for Do While loop
             boolean gameRunning = true;
-            boolean alive =true;
+            boolean alive = true;
             boolean fpKeep = false;
             Cup cup = new Cup();
             Dice die;
@@ -45,14 +45,13 @@ class Play_Game {
                 //make it display the stats for each player
 
                 for (Player_Sheet p : playerSheets) {
-                do {
+                    alive = true;
+
+                    do {
 
                         System.out.println("");
                         System.out.println(p.getName());
-                        System.out.println("Brains eaten: " + p.getBrainsEaten());
-                        System.out.println("Times shot: " + p.getShots());
-                        System.out.println("Survivors cornered: " + p.getSurvivorsCornered());
-                        System.out.println("");
+
 
                         for (int i = 0; i < 3; i++) {
                             //do if statements for if the roll was footprints or not
@@ -68,31 +67,39 @@ class Play_Game {
                                 fpKeep = true;
                                 //make an array length of 3 and save the color of the die and roll again
                             }
+
                         }
-                        if (p.getShots() > 2) {
+                    System.out.println("\nBrains eaten: " + p.getBrainsEaten());
+                    System.out.println("Times shot: " + p.getShots());
+                    System.out.println("Survivors cornered: " + p.getSurvivorsCornered());
+                    System.out.println("");
+
+                        if (p.getShots() >=3) {
                             alive = false;
-                            p.setBrainsEaten(0);
+                            p.setShots(0);
                             p.setSurvivorsCornered(0);
                         }
                         if (p.getBrainsEaten() >= 13) {
                             System.out.println("You win!");
                             alive = false;
                         }
-                        if (alive = true) {
+                        if (alive) {
                             System.out.println("Would you like to continue? Y/N");
                             String cont = scanner.nextLine();
 
                             if (cont.equalsIgnoreCase("N")) {
                                 alive = false;
-                                p.setBrainsEaten(p.getSurvivorsCornered());
+                                p.setBrainsEaten(p.getSurvivorsCornered()+p.getBrainsEaten());
+                                p.setShots(0);
+                                p.setSurvivorsCornered(0);
                             } else if (cont.equalsIgnoreCase("Y")) {
                                 alive = true;
                             } else {
                                 System.out.println("Invalid input, please try again");
                             }
                         }
+                }while (alive) ;
                 }
-                    while (alive) ;}
 
 
 
@@ -102,20 +109,22 @@ class Play_Game {
 
 
 
-                while (select) {
-                    System.out.println("Would you like to play again Yes/No?");
-                    input = scanner.nextLine();
 
-                    if (input.equalsIgnoreCase("yes")) {
-                        select = false;
-                    } else if (input.equalsIgnoreCase("no")) {
-                        select = false;
-                        keepPlaying = false;
-                    } else {
-                        System.out.println("Invalid input, please try again.");
-                    }
-                }
+
             }
+        while (select) {
+            System.out.println("Would you like to play again Yes/No?");
+            input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("yes")) {
+                select = false;
+            } else if (input.equalsIgnoreCase("no")) {
+                select = false;
+                keepPlaying = false;
+            } else {
+                System.out.println("Invalid input, please try again.");
+            }
+        }
         }while (keepPlaying);
     }
 
