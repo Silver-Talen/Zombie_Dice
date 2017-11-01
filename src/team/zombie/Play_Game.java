@@ -21,6 +21,7 @@ class Play_Game {
             String Blast = "Blast";
             String Footprints = "Footprints";
             Player_Sheet[] playerSheets = new Player_Sheet[2];
+            String[] fp = new String[3];
 
 //Getting player information
             String p1 = "";
@@ -39,7 +40,9 @@ class Play_Game {
             boolean alive = true;
             boolean fpKeep = false;
             Cup cup = new Cup();
-            Dice die;
+            Dice die1 = Cup.DiceType();
+            Dice die2 = Cup.DiceType();
+            Dice die3 = Cup.DiceType();
 
             while (gameRunning) {
                 //make it display the stats for each player
@@ -54,9 +57,39 @@ class Play_Game {
 
 
                         for (int i = 0; i < 3; i++) {
-                            //do if statements for if the roll was footprints or not
+                                Dice die = null;
 
-                            die = Cup.DiceType();
+                                if (i ==0) {
+                                    die = die1;
+                                }
+                                if (i ==1) {
+                                die = die2;
+                                }
+                                if (i ==2) {
+                                die = die3;
+                                }
+                            //do if statements for if the roll was footprints or not
+                            if (!die.getType().equalsIgnoreCase("footprints")) {
+                                if (i ==0) {
+                                    die1 = Cup.DiceType();
+                                }
+                                if (i ==1) {
+                                    die2 = Cup.DiceType();
+                                }
+                                if (i ==2) {
+                                    die3 = Cup.DiceType();
+                                }
+                            } else {
+                                if (die.getColor().equalsIgnoreCase("red")) {
+                                    die.setType(die.redDie());
+                                }
+                                if (die.getColor().equalsIgnoreCase("green")) {
+                                    die.setType(die.greenDie());
+                                }
+                                if (die.getColor().equalsIgnoreCase("yellow")) {
+                                    die.setType(die.yellowDie());
+                                }
+                            }
                             System.out.println(die.getColor() + ": " + die.getType());
 
                             if (die.getType().equalsIgnoreCase("brains")) {
@@ -64,7 +97,7 @@ class Play_Game {
                             } else if (die.getType().equalsIgnoreCase("blast")) {
                                 p.setShots(p.getShots() + 1);
                             } else if (die.getType().equalsIgnoreCase("footprints")) {
-                                fpKeep = true;
+
                                 //make an array length of 3 and save the color of the die and roll again
                             }
 
@@ -75,6 +108,7 @@ class Play_Game {
                     System.out.println("");
 
                         if (p.getShots() >=3) {
+                            System.out.println("You got blasted");
                             alive = false;
                             p.setShots(0);
                             p.setSurvivorsCornered(0);
@@ -82,6 +116,7 @@ class Play_Game {
                         if (p.getBrainsEaten() >= 13) {
                             System.out.println("You win!");
                             alive = false;
+                            gameRunning = false;
                         }
                         if (alive) {
                             System.out.println("Would you like to continue? Y/N");
@@ -96,6 +131,7 @@ class Play_Game {
                                 alive = true;
                             } else {
                                 System.out.println("Invalid input, please try again");
+
                             }
                         }
                 }while (alive) ;
