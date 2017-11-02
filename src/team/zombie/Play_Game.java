@@ -45,7 +45,6 @@ class Play_Game {
             Dice die3 = Cup.DiceType();
 
             while (gameRunning) {
-                //make it display the stats for each player
 
                 for (Player_Sheet p : playerSheets) {
                     alive = true;
@@ -53,8 +52,8 @@ class Play_Game {
                     do {
 
                         System.out.println("");
-                        System.out.println(p.getName());
-
+                        if (alive)
+                        System.out.println("It is " + p.getName() + "'s turn");
 
                         for (int i = 0; i < 3; i++) {
                                 Dice die = null;
@@ -68,7 +67,7 @@ class Play_Game {
                                 if (i ==2) {
                                 die = die3;
                                 }
-                            //do if statements for if the roll was footprints or not
+
                             if (!die.getType().equalsIgnoreCase("footprints")) {
                                 if (i ==0) {
                                     die1 = Cup.DiceType();
@@ -117,6 +116,7 @@ class Play_Game {
                             System.out.println("You win!");
                             alive = false;
                             gameRunning = false;
+
                         }
                         if (alive) {
                             System.out.println("Would you like to continue? Y/N");
@@ -131,21 +131,10 @@ class Play_Game {
                                 alive = true;
                             } else {
                                 System.out.println("Invalid input, please try again");
-
                             }
                         }
-                }while (alive) ;
+                }while (alive != false) ;
                 }
-
-
-
-                //til player wins continue
-
-
-
-
-
-
 
             }
         while (select) {
